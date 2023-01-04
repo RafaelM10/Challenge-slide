@@ -38,3 +38,16 @@ const reviews = [
   },
 ];
 
+//selecionando itens
+const img = document.getElementById("person-img");
+const author = document.getElementById("author");
+const job = document.getElementById("job");
+const info = document.getElementById("info");
+
+//selecionando botões
+const btnPrev = document.querySelectorAll(".prev-btn");
+const btnNext = document.querySelectorAll(".next-btn");
+const btnRandom = document.querySelectorAll(".random-btn");
+
+let valueItem = 0;
+
