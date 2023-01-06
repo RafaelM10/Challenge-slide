@@ -45,9 +45,18 @@ const job = document.getElementById("job");
 const info = document.getElementById("info");
 
 //selecionando botões
-const btnPrev = document.querySelectorAll(".prev-btn");
-const btnNext = document.querySelectorAll(".next-btn");
-const btnRandom = document.querySelectorAll(".random-btn");
+const btnPrev = document.querySelector(".prev-btn");
+const btnNext = document.querySelector(".next-btn");
+const btnRandom = document.querySelector(".random-btn");
 
 let valueItem = 0;
 
+window.addEventListener("DOMContentLoaded", function(){
+  //declarei o objectItem para receber meu array de objeto reviews[o valor 0 do (valueItem)];
+  const objectItem = reviews[valueItem];
+  //Selecionei a minha imagem e Chamei meu array de objeto pegando o img que tinha dentro do reviews;
+  img.src = objectItem.img;
+  author.textContent = objectItem.name;
+  job.textContent = objectItem.job;
+  info.textContent = objectItem.text;
+})
