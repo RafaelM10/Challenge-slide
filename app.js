@@ -53,10 +53,41 @@ let valueItem = 0;
 
 window.addEventListener("DOMContentLoaded", function(){
   //declarei o objectItem para receber meu array de objeto reviews[o valor 0 do (valueItem)];
-  const objectItem = reviews[valueItem];
+  const item = reviews[valueItem];
   //Selecionei a minha imagem e Chamei meu array de objeto pegando o img que tinha dentro do reviews;
-  img.src = objectItem.img;
-  author.textContent = objectItem.name;
-  job.textContent = objectItem.job;
-  info.textContent = objectItem.text;
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+})
+
+
+//mostrar animais com base no item 
+function MostrarPessoa(person){
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+}
+
+btnNext.addEventListener('click', function(){
+  valueItem++ 
+  if(valueItem > reviews.length -1){
+    valueItem = 0
+  }
+  return MostrarPessoa(valueItem);
+})
+
+btnPrev.addEventListener('click', function(){
+  valueItem--
+  if(valueItem < 0){
+    valueItem = reviews.length - 1;
+  }
+  return MostrarPessoa(valueItem)
+})
+
+btnRandom.addEventListener('click', function(){
+  valueItem = Math.floor(Math.random() * reviews.length);
+  MostrarPessoa(valueItem);
 })
