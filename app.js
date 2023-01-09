@@ -62,8 +62,9 @@ window.addEventListener("DOMContentLoaded", function(){
 })
 
 
-//mostrar animais com base no item 
+//mostrar pessoas com base no item 
 function MostrarPessoa(person){
+  console.log()
   const item = reviews[person];
   img.src = item.img;
   author.textContent = item.name;
